@@ -5,7 +5,9 @@
 RSpec.describe "movies:latests" do
   include_context "rake"
   it "creates new movies" do
-    expect{ subject.invoke }.to change{ Movie.count }.by(14)
+    VCR.use_cassette('cinefil') do
+      expect{ subject.invoke }.to change{ Movie.count }.by(14)
+    end
   end
 
   # it "creates new messages" do

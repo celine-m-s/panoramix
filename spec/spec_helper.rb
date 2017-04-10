@@ -19,6 +19,12 @@
 
 require 'rails_helper'
 
+require 'vcr'
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock # or :fakeweb
+end
+
 RSpec.configure do |config|
 
   # Include everything that is in the support group.

@@ -1,8 +1,8 @@
 class Movie < ApplicationRecord
   validates :video_url, presence: true
 
-  def self.get_latests_from_cinefilm
-    source = 'Cinefilm'
+  def self.get_latests_from_cinefil
+    source = 'Cinefil'
     doc = Nokogiri::HTML(open('http://www.cinefil.com/bandes-annonces-cinema/sorties-de-la-semaine'))
     movies = doc.css('#postRequestData img.play-button.modal-trigger')
 
