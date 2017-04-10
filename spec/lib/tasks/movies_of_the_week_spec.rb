@@ -5,7 +5,7 @@
 RSpec.describe "movies:latests" do
   include_context "rake"
   it "creates new movies" do
-    expect{ subject.invoke }.to change{ Movie.count }.by(10)
+    expect{ subject.invoke }.to change{ Movie.count }.by(14)
   end
 
   # it "creates new messages" do

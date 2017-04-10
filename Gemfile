@@ -52,7 +52,7 @@ group :development, :test do
   gem 'byebug', platform: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'pry'
+  gem 'pry-rails'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -60,7 +60,6 @@ end
 
 
 group :test do
-  gem 'capybara'
   gem 'database_cleaner'
   # gem 'webmock'
   # gem 'vcr'

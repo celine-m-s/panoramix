@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170410144501) do
 
   create_table "movies", force: :cascade do |t|
     t.string "source"
-    t.string "source_url"
+    t.string "link"
     t.string "title"
     t.datetime "date"
     t.string "video_url"
