@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Movie, type: :model do 
+describe Movie do
   let(:movie) { build(:movie) }
   let(:empty_movie) { build(:movie, :empty) }
 
