@@ -1,7 +1,4 @@
 class Movie < ApplicationRecord
-  # source
-  # title
-  # date
-  # video_url
+  validates :video_url, presence: true
 
 end
