@@ -2,8 +2,11 @@
 # No message is created, even if the rake task works.
 # I don't know how to test it.
 
-describe "movies:movies_of_the_week" do
+RSpec.describe "movies:latests" do
   include_context "rake"
+  it "creates new movies" do
+    expect{ subject.invoke }.to change{ Movie.count }.by(10)
+  end
 
   # it "creates new messages" do
   #   VCR.use_cassette("twitter") do
