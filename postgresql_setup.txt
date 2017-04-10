@@ -1,0 +1,4 @@
+CREATE ROLE panoramix WITH LOGIN CREATEDB;
+CREATE DATABASE panoramix_production WITH OWNER panoramix;
+CREATE DATABASE panoramix_development WITH OWNER panoramix;
+CREATE DATABASE panoramix_test WITH OWNER panoramix;
