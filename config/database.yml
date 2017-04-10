@@ -26,9 +26,9 @@ development: &default
   encoding: unicode
   database: panoramix_development
   pool: 5
-  username: postgres
-  password:
-  host: db
+  #username: postgres
+  #password:
+  #host: db
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
