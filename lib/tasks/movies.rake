@@ -3,6 +3,11 @@ namespace :movies do
   desc "Get latest movies"
 
   task :latests => :environment do
-    MovieRegisterer.create_from_cinefil
+    movies = GetMoviesFromCinefil.instance.call
+
+    movies.each do |m|
+      movie = MovieRegisterer.new(m)
+      movie.register
+    end
   end
 end
