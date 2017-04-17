@@ -33,6 +33,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'pry'
 
+# Registerer
+
+gem 'dry-validation'
+
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   # gem 'web-console', '>= 3.3.0'
@@ -63,6 +68,7 @@ group :test do
   gem 'database_cleaner'
   gem 'webmock'
   gem 'vcr'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

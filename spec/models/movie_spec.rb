@@ -1,18 +1,5 @@
 require 'rails_helper'
 
 describe Movie do
-  let(:movie) { build(:movie) }
-  let(:empty_movie) { build(:movie, :empty) }
-
-  context 'when no video link is provided' do
-    it 'should not be valid' do
-      expect(empty_movie).not_to be_valid
-    end
-  end
-
-  context 'when content is provided' do
-    it 'should be valid' do
-      expect(movie).to be_valid
-    end
-  end
+  it { should validate_presence_of(:video_url) }
 end
