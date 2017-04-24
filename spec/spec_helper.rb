@@ -18,6 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'rails_helper'
+require 'support/request_helpers'
 
 require 'vcr'
 VCR.configure do |config|
@@ -26,6 +27,8 @@ VCR.configure do |config|
 end
 
 RSpec.configure do |config|
+
+  config.include Requests::JsonHelpers
 
   # Include everything that is in the support group.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -59,8 +62,6 @@ RSpec.configure do |config|
   # inherited by the metadata hash of host groups and examples, rather than
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
-
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
@@ -111,4 +112,5 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
 end
