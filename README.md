@@ -12,3 +12,6 @@ Install Docker and run the following commands:
 You need to create the postgresql role and the databases and then migrate.
 
     psql -f postgresql.txt && RAILS_ENV=test rake db:migrate && rake db:migrate
+
+# Visit online
+Project is online. Visit this address: [https://infinite-woodland-84972.herokuapp.com/](https://infinite-woodland-84972.herokuapp.com/)
