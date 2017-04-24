@@ -7,8 +7,7 @@ class MoviesController < ApplicationController
     when params[:date]
       date = Date.parse(params[:date])
       kick_off = last_wednesday(date)
-      binding.pry
-      @movies = Movie.where('CREATED_AT < ? OR CREATED_AT > ?', kick_off.to_s, kick_off.to_s)
+      @movies = Movie.where('CREATED_AT < ? AND CREATED_AT > ?', kick_off.to_s, kick_off.to_s)
       # ensure correct format
     else
       @movies = Movie.all
