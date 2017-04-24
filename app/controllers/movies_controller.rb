@@ -27,6 +27,7 @@ class MoviesController < ApplicationController
 
 
   def last_wednesday(now)
+    Time.wday(3)
     7.times do
       if now.wednesday?
         last_day = now

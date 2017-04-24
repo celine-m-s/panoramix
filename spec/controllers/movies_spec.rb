@@ -28,11 +28,13 @@ describe MoviesController do
       get :show, params: {id: Movie.all.last.id}
       expect(response).to be_success
     end
+    # returns movie with id 10
+  end
 
+  describe 'GET /movies/1' do
     it "should return a movie's details" do
       get :show, params: {id: Movie.all.last.id}
     end
-    # returns movie with id 10
   end
 
   describe 'GET /movies?items=10' do    
@@ -45,6 +47,7 @@ describe MoviesController do
   describe 'GET /movies?date=2017-04-10' do
     it 'should return movies created the week before 2017-01-01' do
       get :index, params: { date: '2017-04-10' }
+
       expect(json.count).to eq(10)
     end
     # returns movies created this week (from wednesday to wednesday) 
