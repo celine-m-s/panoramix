@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe MoviesController do 
-
-  let!(:movies) { 20.times { create(:movie) } }
+  let!(:new_movies) { 10.times { create(:movie) } }
+  before { Time.stub(:now).and_return(Time.mktime(2017, 03, 25)) }
+  let!(:movies) { 10.times { create(:movie) } }
 
   describe 'GET /movies' do
     it 'answers a 200' do
@@ -44,10 +45,15 @@ describe MoviesController do
     end
   end
 
-  describe 'GET /movies?date=2017-04-10' do
-    it 'should return movies created the week before 2017-01-01' do
-      get :index, params: { date: '2017-04-10' }
-
+# use gem delorean
+  describe 'GET /movies?date=2017-04-25' do
+    it 'should return movies updated the week before 2017-03-25' do
+      Movie.all.limit(10).each do |m|
+        m.title = 'a'
+        m.save!
+        m.reload
+      end
+      get :index, params: { date: '2017-03-25' }
       expect(json.count).to eq(10)
     end
     # returns movies created this week (from wednesday to wednesday) 

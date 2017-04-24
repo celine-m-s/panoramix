@@ -1,18 +1,14 @@
 class MoviesController < ApplicationController
 
   def index
-    case 
-    when params[:items]
-      @movies = Movie.all.limit(params[:items].to_i)
-    when params[:date]
-      date = Date.parse(params[:date])
-      kick_off = last_wednesday(date)
-      @movies = Movie.where('CREATED_AT < ? AND CREATED_AT > ?', kick_off.to_s, kick_off.to_s)
+    @movies = Movie.all
+    @movies = limit_by_date(params[:date]) if params[:date]
+    @movies = limit_by_numbers(params[:items].to_i) if params[:items]
       # ensure correct format
-    else
-      @movies = Movie.all
-    end
-    @movies.order!(created_at: :desc) unless @movies.nil?
+  
+    #binding.pry
+
+    @movies.order!(created_at: :desc)
     render json: @movies
   end
 
@@ -25,19 +21,19 @@ class MoviesController < ApplicationController
 
   private
 
+  def limit_by_date(d)
+    date = Date.parse(d)
+    kick_off = last_wednesday(date)
+    Movie.where('created_at <= ?', d.to_s).where('created_at >= ?', kick_off.to_s)
+  end
+
+  def limit_by_numbers(num)
+    Movie.all.limit(num)
+  end
 
   def last_wednesday(now)
-    Time.wday(3)
-    7.times do
-      if now.wednesday?
-        last_day = now
-        break
-      else
-        now -= 1.day
-      end
-    end
-    now
-    
+    days_since_last_wednesday = ((Time.now.wday) - 2) % 7
+    now - days_since_last_wednesday.days
   end
 
 end
