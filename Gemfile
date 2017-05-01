@@ -76,3 +76,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Heroku
 gem 'rails_12factor', group: :production
+
+# Ember <3
+# https://github.com/thoughtbot/ember-cli-rails
+gem 'ember-cli-rails'
+
+gem 'rails_12factor', group: [:staging, :production]

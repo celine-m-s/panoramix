@@ -4,4 +4,7 @@ Rails.application.routes.draw do
     get '/', to: 'movies#index'
     get '/:id', to: 'movies#show'
   end
+
+  # Ember for frontend
+  mount_ember_app :frontend, to: "/"
 end
