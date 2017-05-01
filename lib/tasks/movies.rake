@@ -2,7 +2,12 @@ namespace :movies do
 
   desc "Get latest movies"
 
-  task :latests => :environment do |t, args|
-    Movie.get_latests_from_cinefil
+  task :latests => :environment do
+    movies = GetMoviesFromCinefil.instance.call
+
+    movies.each do |m|
+      movie = MovieRegisterer.new(m)
+      movie.register
+    end
   end
 end
