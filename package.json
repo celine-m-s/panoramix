@@ -9,5 +9,8 @@
     "frontend/node_modules",
     "frontend/bower_components",
     "node_modules"
-  ]
+  ],
+  "devDependencies": {
+    "ember-cli-rails-addon": "^0.8.0"
+  }
 }
