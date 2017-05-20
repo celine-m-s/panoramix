@@ -8,7 +8,14 @@ class GetMoviesFromCinefil
       movies = doc.css('#postRequestData img.play-button.modal-trigger')
 
       movies.map do |movie|
-        vid = movie.attributes["data-video"]["video_url"]
+        a = String.new(movie.attributes["data-video"])
+        #arr = a.split(',')
+        attributes = {}
+         a.gsub(/"/, '').split(',').each do |b|
+          couple = b.split(':')
+          attributes[couple[0]] = couple[1]
+        end
+        vid = attributes['video_url']
 
         {
           source: source,

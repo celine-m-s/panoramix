@@ -80,3 +80,4 @@ gem 'rails_12factor', group: [:staging, :production]
 # Ember <3
 # https://github.com/thoughtbot/ember-cli-rails
 gem 'ember-cli-rails'
+gem "active_model_serializers", "~> 0.10.2"

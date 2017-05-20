@@ -4,10 +4,6 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     @movies = limit_by_date(params[:date]) if params[:date]
     @movies = limit_by_numbers(params[:items].to_i) if params[:items]
-      # ensure correct format
-  
-    #binding.pry
-
     @movies.order!(created_at: :desc)
     render json: @movies
   end

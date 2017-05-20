@@ -1,6 +1,6 @@
 require_relative '../../app/registerers/movie'
 
-namespace :movies do 
+namespace :movies do
 
   desc "Get latest movies"
 
