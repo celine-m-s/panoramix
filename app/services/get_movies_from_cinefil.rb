@@ -9,7 +9,6 @@ class GetMoviesFromCinefil
 
       movies.map do |movie|
         a = String.new(movie.attributes["data-video"])
-        #arr = a.split(',')
         attributes = {}
          a.gsub(/"/, '').split(',').each do |b|
           couple = b.split(':')
