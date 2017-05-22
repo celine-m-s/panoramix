@@ -1,1 +1,4 @@
-{{yield}}
+{{#each movies as |movie|}}
+  {{#video-player title=movie.title link=movie.link date=movie.date video-url=movie.videoUrl thumbnail=movie.thumbnail}}
+  {{/video-player}}
+{{/each}}

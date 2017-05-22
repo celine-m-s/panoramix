@@ -1,9 +1,7 @@
-{{outlet}}
-<h1>Dashboard</h1>
+{{ nav-bar }}
 
-(navigation bar to come)
+<div class="uk-container">
 
-{{#each model as |movie|}}
-  {{#video-player title=movie.title link=movie.link date=movie.date video-url=movie.videoUrl}}
-  {{/video-player}}
-{{/each}}
+{{ new-trailers movies=model }}
+
+</div>

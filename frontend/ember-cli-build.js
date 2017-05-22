@@ -4,20 +4,38 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    sassOptions: {
+      includePaths: [
+        'bower_components'
+      ]
+    }
   });
+  app.import('bower_components/uikit/dist/js/uikit.min.js');
+  app.import('bower_components/uikit/dist/js/uikit-icons.min.js');
+  app.import('bower_components/videojs/src/js/video.js');
 
-  // Use `app.import` to add additional libraries to the generated
-  // output files.
-  //
-  // If you need to use different assets in different
-  // environments, specify an object as the first parameter. That
-  // object's keys should be the environment name and the values
-  // should be the asset to use in that environment.
-  //
-  // If the library that you are including contains AMD or ES6
-  // modules that you would like to import into your application
-  // please specify an object with the list of modules as keys
-  // along with the exports of each module as its value.
+  app.import('bower_components/videojs/src/js/global/window.js');
+  app.import('bower_components/videojs/src/js/global/document.js');
+  app.import('bower_components/videojs/src/js/setup.js');
+  app.import('bower_components/videojs/src/js/utils/stylesheet.js');
+  app.import('bower_components/videojs/src/js/component.js');
+  app.import('bower_components/videojs/src/js/event-target.js');
+  app.import('bower_components/videojs/src/js/player.js');
+  app.import('bower_components/videojs/src/js/plugin.js');
+  app.import('bower_components/videojs/src/js/utils/merge-options.js');
+  app.import('bower_components/videojs/src/js/tracks/text-track.js');
+  app.import('bower_components/videojs/src/js/tracks/audio-track.js');
+  app.import('bower_components/videojs/src/js/tracks/video-track.js');
+  app.import('bower_components/videojs/src/js/utils/time-ranges.js');
+  app.import('bower_components/videojs/src/js/utils/format-time.js');
+  app.import('bower_components/videojs/src/js/utils/log.js');
+  app.import('bower_components/videojs/src/js/utils/dom.js');
+  app.import('bower_components/videojs/src/js/utils/browser.js');
+  app.import('bower_components/videojs/src/js/utils/url.js');
+  app.import('bower_components/videojs/src/js/utils/obj.js');
+  app.import('bower_components/videojs/src/js/utils/computed-style.js');
+  app.import('bower_components/videojs/src/js/extend.js');
+  app.import('bower_components/videojs/src/js/xhr/index.js');
 
   return app.toTree();
 };

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170410144501) do
     t.string "title"
     t.datetime "date"
     t.string "video_url"
+    t.string "thumbnail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

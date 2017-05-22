@@ -4,5 +4,6 @@ export default DS.Model.extend({
     link:  DS.attr('string'),
     title:  DS.attr('string'),
     date:  DS.attr('date'),
-    videoUrl:  DS.attr('string')
+    videoUrl:  DS.attr('string'),
+    thumbnail: DS.attr('string')
 });
