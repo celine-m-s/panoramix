@@ -1,4 +1,20 @@
-{{#each movies as |movie|}}
-  {{#video-player title=movie.title link=movie.link date=movie.date video-url=movie.videoUrl thumbnail=movie.thumbnail}}
-  {{/video-player}}
+<h1></h1>
+
+<div class="uk-grid-small uk-child-width-1-1@s uk-flex-center uk-text-center" uk-grid>
+  {{#each movies as |movie index|}}
+    {{#if (eq index 0)}}
+      {{#video-player title=movie.title link=movie.link date=movie.date video-url=movie.videoUrl thumbnail=movie.thumbnail}}
+      {{/video-player}}
+      <hr class="uk-divider-icon">
+    {{/if}}
+  {{/each}}
+</div>
+
+<div class="uk-grid-small uk-child-width-1-4@s uk-flex-center uk-text-center" uk-grid>
+{{#each movies as |movie index|}}
+  {{#if (not-eq index 0)}}
+    {{#video-thumbnail title=movie.title link=movie.link date=movie.date video-url=movie.videoUrl thumbnail=movie.thumbnail}}
+    {{/video-thumbnail}}
+  {{/if}}
 {{/each}}
+</div>

@@ -14,3 +14,12 @@ $global-link-color: #DA7D02;
 // My styles
 
 @import "variables";
+
+.video-js {
+  margin: auto;
+}
+
+.video-js .vjs-big-play-button {
+  top: 40%;
+  left: 45%;
+}
