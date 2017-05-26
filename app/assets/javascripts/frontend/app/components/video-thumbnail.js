@@ -8,6 +8,9 @@ export default Ember.Component.extend({
       $(video).attr('src', videoUrl);
       $(video).load();
       $(video).play();
+      this.set('isRead', true);
     }
-  }
+  },
+  classNameBindings: ['isRead'],
+  isRead: false
 });
