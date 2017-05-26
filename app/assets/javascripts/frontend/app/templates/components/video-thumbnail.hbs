@@ -2,7 +2,9 @@
     <div>
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
-                <img src="{{thumbnail}}" alt="">
+                <a href="#" {{action "renderVideoComponent" video-url }}>
+                  <img src="{{thumbnail}}" alt="Image du film {{title}}">
+                </a>
             </div>
             <div class="uk-card-body">
                 <h3 class="uk-card-title">{{title}}</h3>
