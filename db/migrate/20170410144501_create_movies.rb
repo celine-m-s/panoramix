@@ -13,13 +13,7 @@ class CreateMovies < ActiveRecord::Migration[5.1]
   end
 
   def down
-    drop_table :movies do |t|
-      t.string :source
-      t.string :source_url
-      t.string :title
-      t.datetime :date
-      t.string :video_url
-    end
+    drop_table :movies
   end
 
 end
