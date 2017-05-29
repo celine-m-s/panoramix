@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Movie.create(
+  source: 'Cinefilm',
+  link: 'http://www.cinefilm.com/amovie',
+  title: 'Summer in Paris',
+  video_url: 'http://cinefilm.com/slkdlsd.mp4',
+  thumbnail: 'http://cinefilm.ksssss.jpg',
+  isRead: false
+)
