@@ -13,7 +13,7 @@
 <div class="uk-grid-small uk-child-width-1-4@s uk-flex-center uk-text-center" uk-grid>
 {{#each movies as |movie index|}}
   {{#if (not-eq index 0)}}
-    {{#video-thumbnail title=movie.title link=movie.link date=movie.date video-url=movie.videoUrl thumbnail=movie.thumbnail}}
+    {{#video-thumbnail title=movie.title link=movie.link date=movie.date video-url=movie.videoUrl thumbnail=movie.thumbnail is-read=movie.isRead}}
     {{/video-thumbnail}}
   {{/if}}
 {{/each}}

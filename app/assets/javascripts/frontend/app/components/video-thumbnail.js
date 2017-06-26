@@ -6,7 +6,6 @@ export default Ember.Component.extend({
     renderVideoComponent(videoUrl) {
         var random = Math.floor((Math.random() * 100) + 1);
         var id = 'videoPlayer-' + random
-        console.log(id);
         $('#videoContainer').children().remove();
         $('#videoContainer').append('<video id="' + id + '" class="video-js" controls preload="auto" data-setup="{}">');
         $('#' + id).append('<source src="' + videoUrl +'" type="video/mp4">');
@@ -17,6 +16,6 @@ export default Ember.Component.extend({
     }
   },
   // Ce n'est pas au composant de persister la donnée mais au controller.
-  classNameBindings: ['isRead'],
+  // classNameBindings: ['isRead']
   // isRead: this.attr('isRead')
 });

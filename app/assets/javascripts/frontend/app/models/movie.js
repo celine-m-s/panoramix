@@ -6,5 +6,5 @@ export default DS.Model.extend({
     date:  DS.attr('date'),
     videoUrl:  DS.attr('string'),
     thumbnail: DS.attr('string'),
-    isRead: DS.attr('boolean', { defaultValue: false })
+    isRead: DS.attr('boolean')
 });
