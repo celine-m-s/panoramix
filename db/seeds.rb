@@ -12,5 +12,5 @@ Movie.create(
   title: 'Summer in Paris',
   video_url: 'http://cinefilm.com/slkdlsd.mp4',
   thumbnail: 'http://cinefilm.ksssss.jpg',
-  isRead: false
+  is_read: false
 )

@@ -1,0 +1,35 @@
+# docker build -t panoramix_alpine -f Dockerfile.alpine ./
+# https://docs.docker.com/engine/reference/builder/#format
+# for later: maybe use Alpine
+# but commands are not the same so caution!
+
+FROM ruby:2.4.3-alpine3.7
+
+RUN apk add --no-cache \
+  build-base \
+  libpq-dev \
+  libxml2-dev \
+  libxslt1-dev \
+  libqt4-webkit \
+  libqt4-dev \
+  xvfb \
+  nodejs
+
+
+ENV APP_HOME /usr/src/panoramix/
+RUN mkdir $APP_HOME
+
+# This defines the base directory from which all our commands are executed.
+WORKDIR $APP_HOME
+
+# This copies files from the host machine (in our case, relative to Dockerfile on OS X) to the container.
+COPY Gemfile Gemfile.lock $APP_HOME/ 
+RUN gem install bundler && bundle install --jobs 20 --retry 5
+
+ADD . $APP_HOME
+
+# ==================================================
+LABEL \
+    image_name="panoramix_alpine" \
+    libelle="Celine MS - Panoramix project" \
+    version="0.1.0"

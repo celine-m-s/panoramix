@@ -12,7 +12,6 @@ export default Ember.Component.extend({
         var player = videojs('#' + id);
         player.load();
         player.play();
-        this.set('isRead', true);
     }
   },
   // Ce n'est pas au composant de persister la donnée mais au controller.
